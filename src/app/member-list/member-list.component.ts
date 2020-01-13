@@ -14,8 +14,10 @@ users: User[];
 
   ngOnInit() {
   }
-  loadUser(){
-    this.userService.getUsers().subscribe
+  loadUser() {
+    this.userService.getUsers().subscribe((users: User[]) => {
+      this.users = users;
+    }, error => { this.alertify.error(error);})
   }
 
 }

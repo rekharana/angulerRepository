@@ -14,7 +14,7 @@ model: any = {};
   constructor(public authService: AuthService, private alertify: AlertifyService, private router: Router) { }
 
   ngOnInit() {}
-  login() { 
+  login() {
   this.authService.login(this.model).subscribe( next => {
    this.alertify.success('successfully');
   }, error => {

@@ -13,7 +13,7 @@ jwtHelper = new JwtHelperService();
 decodedToken: any;
 constructor(private http: HttpClient) { }
 login(model: any) {
-return this.http.post(this.baseUrl + '/authenticate', model)
+return this.http.post('http://localhost:49548/api/users/authenticate', model)
 .pipe(map((response: any) => {
     const user = response;
     if (user) {

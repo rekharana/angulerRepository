@@ -17,10 +17,10 @@ export class UserService {
 baseUrl = environment.apiUrl;
 constructor(private http: HttpClient) { }
 
-getUsers(): Observable<User[]>{
-  return this.http.get<User[]>(this.baseUrl + '/users', httpOptions);
+getUsers(): Observable<User[]> {
+  return this.http.get<User[]>(this.baseUrl + 'users', httpOptions);
 }
 getUser(id): Observable<User> {
-  return this.http.get<User>(this.baseUrl + '/user/' + id, httpOptions);
+  return this.http.get<User>(this.baseUrl + 'user/' + id, httpOptions);
 }
 }
