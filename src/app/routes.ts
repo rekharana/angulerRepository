@@ -17,4 +17,4 @@ export const appRoutes: Routes = [
 },
     // {path : 'member', component: MemberListComponent, canActivate: [AuthGuard]},
     {path : '**', redirectTo: '', pathMatch: 'full' },
-]
+]   
