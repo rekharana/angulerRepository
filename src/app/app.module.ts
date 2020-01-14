@@ -10,11 +10,12 @@ import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { BsDropdownModule } from 'ngx-bootstrap';
-import { MemberListComponent } from './member-list/member-list.component';
+import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ListComponent } from './list/list.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
+import { MemberCardComponent } from './members/member-card/member-card.component';
 
 @NgModule({
    declarations: [
@@ -24,7 +25,8 @@ import { appRoutes } from './routes';
       RegisterComponent,
       MemberListComponent,
       MessagesComponent,
-      ListComponent
+      ListComponent,
+      MemberCardComponent
    ],
    imports: [
       BrowserModule,
