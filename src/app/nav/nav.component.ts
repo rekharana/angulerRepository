@@ -19,14 +19,14 @@ model: any = {};
    this.alertify.success('successfully');
   }, error => {
     this.alertify.error(error);
-  }, () => { this.router.navigate(['/member'])});
+  }, () => { this.router.navigate(['/member']); });
 }
 
 loggedIn() {
  return this.authService.loggedIn();
 }
 
-logout(){
+logout() {
   localStorage.removeItem('token');
   this.alertify.message('logout');
   this.router.navigate(['/home']);
