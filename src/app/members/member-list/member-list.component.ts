@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../_models/user';
 import { UserService } from '../../_services/user.service';
 import { AlertifyService } from '../../_services/alertify.service';
-import { MemberDetailsResolver } from 'src/app/_resolvers/member-detail.resolve';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({

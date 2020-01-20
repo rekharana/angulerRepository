@@ -23,14 +23,13 @@ return this.http.post('http://localhost:49548/api/users/authenticate', model)
         }
     }));
 }
-register(model: any){
+register(model: any) {
   return this.http.post(this.baseUrl + '/register', model);
 }
 loggedIn() {
-  const token = localStorage.getItem('token');  
+  const token = localStorage.getItem('token');
   return !this.jwtHelper.isTokenExpired(token);
   }
-  
 }
 
 

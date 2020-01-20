@@ -19,10 +19,13 @@ import { ListComponent } from './list/list.component';
 import { RouterModule } from '@angular/router';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
-import { MemberDetailsResolver } from './_resolvers/member-detail.resolve';
+import {  MemberEditResolver } from './_resolvers/member-edit.resolve';
 import { AlertifyService } from './_services/alertify.service';
 import { UserService } from './_services/user.service';
 import { MemberListResolver } from './_resolvers/member-list.resolve';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberDetailsResolver } from './_resolvers/member-detail.resolve';
+import { PreventUnSavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 export function tokenGetter() { return localStorage.getItem('token'); }
 
@@ -43,7 +46,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       MessagesComponent,
       ListComponent,
       MemberCardComponent,
-      MemberDetailComponent
+      MemberDetailComponent,
+      MemberEditComponent
    ],
    imports: [
       BrowserModule,
@@ -62,8 +66,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
         })
       ], providers: [ MemberDetailsResolver, AlertifyService,
          UserService, AuthService , MemberListResolver,
+         MemberEditResolver, PreventUnSavedChanges,
          { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }
-         
    ],
    bootstrap: [
       AppComponent
