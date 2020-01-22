@@ -12,8 +12,7 @@ import { AuthService } from '../_services/auth.service';
 export class MemberEditResolver implements Resolve<User> {
     constructor(private userService: UserService, private router: Router, private alertify: AlertifyService, private authservice: AuthService) {}
     resolve(route: ActivatedRouteSnapshot): Observable<User> {
-        console.log(this.authservice.decodedToken);
-        return this.userService.getUser(this.authservice.decodedToken.UserId). pipe(
+              return this.userService.getUser(this.authservice.decodedToken.UserId). pipe(
             catchError(error => {
                 this.alertify.error('Problem retrieving your data');
                 this.router.navigate(['/member']);
